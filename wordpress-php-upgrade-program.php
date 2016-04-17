@@ -67,12 +67,12 @@ class WP_PHP_Upgrade_Program {
 		$classes = array(
 			'notifier-interface',
 			'collector',
-			'notifier',
 			'notification',
+			'notifier',
 			'optin',
+			'options',
 			'statistics',
 			'system-identifier',
-			'options',
 		);
 
 		array_map( array( __CLASS__, 'loadClass' ), $classes );
