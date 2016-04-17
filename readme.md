@@ -20,3 +20,11 @@ We would be very grateful if you would contact your hosting provider (the compan
 If they cannot provide this for you, find somebody who can transfer your website to a hosting provider that keeps it's services up-to-date.
 
 [ insert standard email from WordPress here... ]
+
+## WordPress 2.7.0 required
+
+Currently WordPress 2.7.0 is required for this plugin to work.
+This is because we need to communicate with a remote server to communicate the data.
+
+We consider to write a wrapper around this to facilitate older WordPress versions.
+The lowest possible version we could support is 1.5.0.

@@ -5,6 +5,11 @@ class WP_PHP_UP_OptIn implements WP_PHP_UP_Notifier_Interface {
 	const OPTION_KEY = 'php_upgrade_optin_success';
 	const NONCE = 'wp-php-nonce';
 
+	/**
+	 * WP_PHP_UP_OptIn constructor.
+	 *
+	 * @param WP_PHP_UP_Notifier|null $notifier
+	 */
 	public function __construct( WP_PHP_UP_Notifier $notifier = null ) {
 
 		if ( $this->saved() ) {
@@ -18,6 +23,9 @@ class WP_PHP_UP_OptIn implements WP_PHP_UP_Notifier_Interface {
 		}
 	}
 
+	/**
+	 *
+	 */
 	public function getUserInput() {
 		if ( ! empty( $_POST[ self::NONCE ] ) ) {
 			$nonce = $_POST[ self::NONCE ];
@@ -30,10 +38,18 @@ class WP_PHP_UP_OptIn implements WP_PHP_UP_Notifier_Interface {
 		}
 	}
 
+	/**
+	 * @return bool
+	 */
 	public function success() {
 		return '1' === get_option( self::OPTION_KEY, null );
 	}
 
+	/**
+	 * Has the opt-in been saved
+	 *
+	 * @return bool
+	 */
 	public function saved() {
 		$option = get_option( self::OPTION_KEY, null );
 		if ( $option === '1' || $option === '0' ) {
@@ -43,18 +59,27 @@ class WP_PHP_UP_OptIn implements WP_PHP_UP_Notifier_Interface {
 		return false;
 	}
 
+	/**
+	 * @param bool $allowed
+	 */
 	public function setSuccess( $allowed ) {
 		update_option( self::OPTION_KEY, $allowed ? '1' : '0' );
 	}
 
+	/**
+	 * @return void|WP_PHP_UP_Notification
+	 */
 	public function getNotification() {
-		if ( $this->success() ) {
-			return;
+		if ( ! $this->success() ) {
+			return new WP_PHP_UP_Notification( 'info', $this->getOptInText() );
 		}
-
-		return new WP_PHP_UP_Notification( 'info', $this->getOptInText() );
 	}
 
+	/**
+	 * Get the text to be displayed on opt-in
+	 *
+	 * @return string
+	 */
 	public function getOptInText() {
 
 		$optIn = $this->success();
@@ -87,9 +112,7 @@ class WP_PHP_UP_OptIn implements WP_PHP_UP_Notifier_Interface {
 			$output .= __( 'The information is stored on keen.io and the results can be viewed ##here##.', 'wp-php-upgrade-program' );
 			$output .= '</p>';
 		}
-
-
-
+		
 		$output .= '<p><em>';
 		$output .= __( 'We scramble any identifiable information, but we need to uniquely identifier the source of the sent statistics.', 'wp-php-upgrade-program' );
 		$output .= '<br>';

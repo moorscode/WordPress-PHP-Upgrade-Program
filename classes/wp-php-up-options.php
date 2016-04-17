@@ -29,7 +29,7 @@ class WP_PHP_UP_Options {
 			<h2><?php _e( 'WordPress PHP Upgrade Program', 'php-wp-upgrade-program' ); ?></h2>
 			<?php echo $statistics->getNotification()->getMessage(); ?>
 			<hr>
-			<?php echo $collector->getNotification( false )->getMessage(); ?>
+			<?php echo $collector->getNotification( true )->getMessage(); ?>
 			<hr>
 			<?php echo $optIn->getOptInText(); ?>
 

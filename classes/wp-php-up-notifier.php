@@ -4,24 +4,41 @@ class WP_PHP_UP_Notifier {
 
 	private $notifications = array();
 
-	public function __construct() {
-		add_action( 'admin_notices', array( $this, 'display_notification' ) );
-	}
-
+	/**
+	 * @param WP_PHP_UP_Notifier_Interface $subject Subject to get a notification from.
+	 */
 	public function add( WP_PHP_UP_Notifier_Interface $subject ) {
-		$result = $subject->getNotification();
-		if ( empty( $result ) ) {
+		$notification = $subject->getNotification();
+		if ( empty( $notification ) ) {
 			return;
 		}
 
-		$this->notifications[] = sprintf( '<div class="php-52-upgrade-program__notification notice notice-%s"><h3>WordPress PHP Upgrade Program</h3>%s</div>', $result->getType(), $result->getMessage() );
+		if ( empty( $this->notifications ) ) {
+			add_action( 'admin_notices', array( $this, 'display_notification' ) );
+		}
+
+		$this->notifications[] = $notification;
 	}
 
+	/**
+	 * Show the notifications with admin notices
+	 */
 	public function display_notification() {
-		if ( ! $this->notifications ) {
+		if ( empty( $this->notifications ) ) {
 			return;
 		}
 
-		echo implode( PHP_EOL, $this->notifications );
+		$notifications = array_map( array( $this, 'format_notification' ), $this->notifications );
+
+		echo implode( PHP_EOL, $notifications );
+	}
+
+	private function format_notification( WP_PHP_UP_Notification $notification ) {
+		return sprintf(
+			'<div class="wp-php-upgrade-program__notification notice notice-%1$s"><h3>%3$s</h3>%2$s</div>',
+			$notification->getType(),
+			$notification->getMessage(),
+			__( 'WordPress PHP Upgrade Program', 'wp-php-upgrade-program' )
+		);
 	}
 }

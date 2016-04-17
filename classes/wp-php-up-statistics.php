@@ -2,6 +2,11 @@
 
 class WP_PHP_UP_Statistics implements WP_PHP_UP_Notifier_Interface {
 
+	/**
+	 * Get the PHP Version
+	 * 
+	 * @return string PHP Version
+	 */
 	public function PHPVersion() {
 		static $php_version;
 
@@ -13,7 +18,9 @@ class WP_PHP_UP_Statistics implements WP_PHP_UP_Notifier_Interface {
 	}
 
 	/**
-	 * @return void|string
+	 * Get the notification
+	 * 
+	 * @return void|WP_PHP_UP_Notification
 	 */
 	public function getNotification() {
 
@@ -28,6 +35,11 @@ class WP_PHP_UP_Statistics implements WP_PHP_UP_Notifier_Interface {
 		return $this->generateNotification( 'good' );
 	}
 
+	/**
+	 * @param string $type Status of the version
+	 *
+	 * @return WP_PHP_UP_Notification
+	 */
 	private function generateNotification( $type ) {
 		switch ( $type ) {
 			case 'bad':
@@ -49,6 +61,11 @@ class WP_PHP_UP_Statistics implements WP_PHP_UP_Notifier_Interface {
 		return new WP_PHP_UP_Notification( $type, sprintf( '<p>' . $format . '</p>', '<code>' . $this->PHPVersion() . '</code>' ) );
 	}
 
+	/**
+	 * The PHP versions that are bad and acceptable
+	 * 
+	 * @return array
+	 */
 	private function getRanges() {
 		$ranges = array(
 			'bad'        => '5.4',
