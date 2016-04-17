@@ -2,7 +2,7 @@
 
 With this plugin we want to try to get a better insigh about what PHP version people are running their WordPress installations on.
 
-By having a completely Opt-IN approach we make sure all privacy is maintained.
+By having a completely opt-in approach we make sure all privacy is maintained.
 
 The following data is sent to the collection service:
  * PHP Version

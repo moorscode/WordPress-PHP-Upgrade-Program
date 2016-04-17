@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WordPress PHP upgrade program\n"
+"POT-Creation-Date: 2016-04-17 15:54+0200\n"
+"PO-Revision-Date: 2016-04-17 15:55+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wordpress-php-upgrade-program.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: classes/wp-php-up-collector.php:70
+msgid "The statistics about your server have been sent successfully!"
+msgstr ""
+
+#: classes/wp-php-up-collector.php:72
+msgid ""
+"Thank you for allowing us to collect your information, stay informed about "
+"the project at ##insert link here##"
+msgstr ""
+
+#: classes/wp-php-up-collector.php:81
+msgid "The statistics of your server could not be sent."
+msgstr ""
+
+#: classes/wp-php-up-optin.php:71
+#, php-format
+msgid "I want to participate in the %s."
+msgstr ""
+
+#: classes/wp-php-up-optin.php:71 classes/wp-php-up-options.php:29
+msgid "WordPress PHP Upgrade Program"
+msgstr ""
+
+#: classes/wp-php-up-optin.php:76
+msgid "Save preference"
+msgstr ""
+
+#: classes/wp-php-up-optin.php:81
+msgid ""
+"The information will be send to keen.io and the results can be viewed "
+"##here##."
+msgstr ""
+
+#: classes/wp-php-up-optin.php:87
+msgid ""
+"The information is stored on keen.io and the results can be viewed ##here##."
+msgstr ""
+
+#: classes/wp-php-up-optin.php:94
+msgid ""
+"We scramble any identifiable information, but we need to uniquely identifier "
+"the source of the sent statistics."
+msgstr ""
+
+#: classes/wp-php-up-optin.php:96
+msgid ""
+"If we don't do that, information that is sent twice from the same server "
+"will be shown as two different servers, which will give a wrong idea of the "
+"situation."
+msgstr ""
+
+#: classes/wp-php-up-options.php:13 classes/wp-php-up-options.php:14
+msgid "PHP Upgrade Program"
+msgstr ""
+
+#: classes/wp-php-up-statistics.php:35
+#, php-format
+msgid ""
+"Warning! Your server is running PHP version %s. This is a very old version!"
+msgstr ""
+
+#: classes/wp-php-up-statistics.php:40
+#, php-format
+msgid ""
+"Your server is running PHP version %s. This version is not the latest though "
+"acceptable."
+msgstr ""
+
+#: classes/wp-php-up-statistics.php:45
+#, php-format
+msgid "Your server is running PHP version %s which is good enough for now!"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WordPress PHP upgrade program"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wordpress.org/plugins/wp-php-upgrade-program/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Allows to collect statistics about the PHP version that is used on your "
+"webserver."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Jip Moors"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://yoast.com/about-us/jip-moors/"
+msgstr ""
