@@ -36,6 +36,9 @@ class WP_PHP_UP_Collector implements WP_PHP_UP_Notifier_Interface {
 
 	public function send() {
 
+		/**
+		 * @todo add collection request
+		 */
 		// Build args...
 
 		$args   = array( 'hoi' );
